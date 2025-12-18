@@ -16,7 +16,7 @@ Blog post: [Golden Images and Proxmox Templates with cloud-init]
   - For systems using ZFS storage, a script with `local-zfs` defaults is available: [`build-template` (ZFS)](/scripts-zfs/build-template).
 - [`image-update`](/scripts/image-update): Check for an updated image and
   download the latest or missing image.
-  - Works with `alma`, `centos`, `debian`, `fedora` and `ubuntu` cloud images.
+  - Works with `alma`, `rocky`, `debian`, `fedora` and `ubuntu` cloud images.
   - **Requires** `curl`
   - **Note**: This script will change the file extension to `*.img` for visibility in the Proxmox GUI, `qm disk import`
     will automatically convert disk image.
@@ -83,7 +83,7 @@ root@pve:~$ image-update -d <DISTRO_NAME> -r <RELEASE_NAME> [ARGS]
   <summary>Code Examples</summary>
 
 ```bash
-image-update -d centos -r 9
+image-update -d rocky -r 9
 ```
 
 ```bash
@@ -154,7 +154,6 @@ crontab -e
 >
 > Please consider the typical release frequency when creating timers, as there is little advantage to creating daily or weekly timers.
 >
-> - Centos: monthly, at the end of the month.
 > - Debian: bi-weekly to monthly.
 > - Fedora: single release, no reason to create a timer for any version.
 > - Ubuntu: bi-weekly, typically during the 2nd and 4th week of a month.
@@ -288,9 +287,9 @@ Linux Cloud Images:
 - [Alma Cloud Images]
   - Default User: ``
   - Uses: `AlmaLinux-X-GenericCloud-latest.x86_64.qcow2`
-- [CentOS Cloud Images]
-  - Default User: `centos`
-  - Uses: `CentOS-Stream-GenericCloud-X-latest.x86_64.qcow2`
+- [Rocky Cloud Images]
+  - Default User: ``
+  - Uses: `Rocky-X-GenericCloud-Base.latest.x86_64.img`
 - [Debian Cloud Images]
   - Default User: `debian`
   - Uses `debian-1x-generic-amd64.qcow2`
@@ -307,7 +306,7 @@ Proxmox:
 - [Proxmox templates]
 
 [Alma Cloud Images]: https://almalinux.org/get-almalinux/#Cloud_Images
-[CentOS Cloud Images]: https://cloud.centos.org/
+[Rocky Cloud Images]: https://rockylinux.org/de-DE/download
 [Debian Cloud Images]: https://cloud.debian.org/images/cloud/
 [Fedora Cloud Images]: https://fedoraproject.org/cloud/download
 [Ubuntu Cloud Images]: https://cloud-images.ubuntu.com/releases/
