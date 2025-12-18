@@ -212,6 +212,12 @@ function set_image_values() {
       remote_shasum_url="https://download.fedoraproject.org/pub/fedora/linux/releases/42/Cloud/x86_64/images/Fedora-Cloud-42-1.1-x86_64-CHECKSUM"
       shasum_algorithm="256"
       ;;
+    43)
+      file_name="Fedora-Cloud-Base-Generic-43-1.6.x86_64.qcow2"
+      remote_url="https://download.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-43-1.6.x86_64.qcow2"
+      remote_shasum_url="https://download.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/x86_64/images/Fedora-Cloud-43-1.6-x86_64-CHECKSUM"
+      shasum_algorithm="256"
+      ;;
     *)
       err "Unknown distro, only works for Fedora 40+"
       ;;
