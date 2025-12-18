@@ -174,18 +174,6 @@ function set_image_values() {
       err "Unknown distro, only works for Debian 10-12"
       ;;
     esac
-  elif [[ "${DISTRO_NAME}" == "centos" ]]; then
-    case $RELEASE_NAME in
-    9)
-      file_name="CentOS-Stream-GenericCloud-9-latest.x86_64.qcow2"
-      remote_url="https://cloud.centos.org/centos/9-stream/x86_64/images/CentOS-Stream-GenericCloud-9-latest.x86_64.qcow2"
-      remote_shasum_url="https://cloud.centos.org/centos/9-stream/x86_64/images/CentOS-Stream-GenericCloud-9-latest.x86_64.qcow2.SHA256SUM"
-      shasum_algorithm="256"
-      ;;
-    *)
-      err "Unknown distro, only works for CentOS Stream 9"
-      ;;
-    esac
   elif [[ "${DISTRO_NAME}" == "fedora" ]]; then
     case $RELEASE_NAME in
     40)
