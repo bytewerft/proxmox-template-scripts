@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Download the latest CentOS, Debian, Fedora or Ubuntu cloud image
+# Download the latest Rocky, Alma, Debian, Fedora or Ubuntu cloud image
 # Source: https://github.com/trfore/proxmox-template-scripts
 #
 # Copyright 2022 Taylor Fore
@@ -271,7 +271,7 @@ function set_image_values() {
       ;;
     esac
   else
-    err "Unsupported distro. Please specify 'centos', 'debian', 'fedora' or 'ubuntu'."
+    err "Unsupported distro. Please specify 'rocky', 'alma', 'debian', 'fedora' or 'ubuntu'."
   fi
 
   readonly file_name remote_url remote_shasum_url shasum_algorithm
