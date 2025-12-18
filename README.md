@@ -289,7 +289,7 @@ Linux Cloud Images:
   - Uses: `AlmaLinux-X-GenericCloud-latest.x86_64.qcow2`
 - [Rocky Cloud Images]
   - Default User: ``
-  - Uses: `Rocky-X-GenericCloud-Base.latest.x86_64.img`
+  - Uses: `Rocky-X-GenericCloud-Base.latest.x86_64.qcow2`
 - [Debian Cloud Images]
   - Default User: `debian`
   - Uses `debian-1x-generic-amd64.qcow2`
