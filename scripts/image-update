@@ -152,12 +152,6 @@ function get_image_date() {
 function set_image_values() {
   if [[ "${DISTRO_NAME}" == "debian" ]]; then
     case $RELEASE_NAME in
-    buster | 10)
-      file_name="debian-10-generic-amd64.qcow2"
-      remote_url="https://cloud.debian.org/images/cloud/buster/latest/debian-10-generic-amd64.qcow2"
-      remote_shasum_url="https://cloud.debian.org/images/cloud/buster/latest/SHA512SUMS"
-      shasum_algorithm="512"
-      ;;
     bullseye | 11)
       file_name="debian-11-generic-amd64.qcow2"
       remote_url="https://cloud.debian.org/images/cloud/bullseye/latest/debian-11-generic-amd64.qcow2"
