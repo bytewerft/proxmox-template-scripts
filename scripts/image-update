@@ -152,12 +152,6 @@ function get_image_date() {
 function set_image_values() {
   if [[ "${DISTRO_NAME}" == "debian" ]]; then
     case $RELEASE_NAME in
-    bullseye | 11)
-      file_name="debian-11-generic-amd64.qcow2"
-      remote_url="https://cloud.debian.org/images/cloud/bullseye/latest/debian-11-generic-amd64.qcow2"
-      remote_shasum_url="https://cloud.debian.org/images/cloud/bullseye/latest/SHA512SUMS"
-      shasum_algorithm="512"
-      ;;
     bookworm | 12)
       file_name="debian-12-generic-amd64.qcow2"
       remote_url="https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-generic-amd64.qcow2"
@@ -176,28 +170,16 @@ function set_image_values() {
     esac
   elif [[ "${DISTRO_NAME}" == "fedora" ]]; then
     case $RELEASE_NAME in
-    40)
-      file_name="Fedora-Cloud-Base-Generic.x86_64-40-1.14.qcow2"
-      remote_url="https://download.fedoraproject.org/pub/fedora/linux/releases/40/Cloud/x86_64/images/Fedora-Cloud-Base-Generic.x86_64-40-1.14.qcow2"
-      remote_shasum_url="https://download.fedoraproject.org/pub/fedora/linux/releases/40/Cloud/x86_64/images/Fedora-Cloud-40-1.14-x86_64-CHECKSUM"
-      shasum_algorithm="256"
-      ;;
-    41)
-      file_name="Fedora-Cloud-Base-Generic-41-1.4.x86_64.qcow2"
-      remote_url="https://download.fedoraproject.org/pub/fedora/linux/releases/41/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-41-1.4.x86_64.qcow2"
-      remote_shasum_url="https://download.fedoraproject.org/pub/fedora/linux/releases/41/Cloud/x86_64/images/Fedora-Cloud-41-1.4-x86_64-CHECKSUM"
-      shasum_algorithm="256"
-      ;;
-    42)
-      file_name="Fedora-Cloud-Base-Generic-42-1.1.x86_64.qcow2"
-      remote_url="https://download.fedoraproject.org/pub/fedora/linux/releases/42/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-42-1.1.x86_64.qcow2"
-      remote_shasum_url="https://download.fedoraproject.org/pub/fedora/linux/releases/42/Cloud/x86_64/images/Fedora-Cloud-42-1.1-x86_64-CHECKSUM"
-      shasum_algorithm="256"
-      ;;
     43)
       file_name="Fedora-Cloud-Base-Generic-43-1.6.x86_64.qcow2"
       remote_url="https://download.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-43-1.6.x86_64.qcow2"
       remote_shasum_url="https://download.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/x86_64/images/Fedora-Cloud-43-1.6-x86_64-CHECKSUM"
+      shasum_algorithm="256"
+      ;;
+    44)
+      file_name="Fedora-Cloud-Base-Generic-44-1.7.x86_64.qcow2"
+      remote_url="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-44-1.7.x86_64.qcow2"
+      remote_shasum_url="https://download.fedoraproject.org/pub/fedora/linux/releases/44/Cloud/x86_64/images/Fedora-Cloud-44-1.7-x86_64-CHECKSUM"
       shasum_algorithm="256"
       ;;
     *)
@@ -206,12 +188,6 @@ function set_image_values() {
     esac
   elif [[ "${DISTRO_NAME}" == "alma" ]]; then
     case $RELEASE_NAME in
-    8)
-      file_name="AlmaLinux-8-GenericCloud-UEFI-latest.x86_64.qcow2"
-      remote_url="https://repo.almalinux.org/almalinux/8/cloud/x86_64/images/AlmaLinux-8-GenericCloud-UEFI-latest.x86_64.qcow2"
-      remote_shasum_url="https://repo.almalinux.org/almalinux/8/cloud/x86_64/images/CHECKSUM"
-      shasum_algorithm="256"
-      ;;
     9)
       file_name="AlmaLinux-9-GenericCloud-latest.x86_64.qcow2"
       remote_url="https://repo.almalinux.org/almalinux/9/cloud/x86_64/images/AlmaLinux-9-GenericCloud-latest.x86_64.qcow2"
@@ -248,22 +224,16 @@ function set_image_values() {
     esac
   elif [[ "${DISTRO_NAME}" == "ubuntu" ]]; then
     case $RELEASE_NAME in
-    focal | 20)
-      file_name="ubuntu-20.04-server-cloudimg-amd64.img"
-      remote_url="https://cloud-images.ubuntu.com/releases/focal/release/ubuntu-20.04-server-cloudimg-amd64.img"
-      remote_shasum_url="https://cloud-images.ubuntu.com/releases/focal/release/SHA256SUMS"
-      shasum_algorithm="256"
-      ;;
-    jammy | 22)
-      file_name="ubuntu-22.04-server-cloudimg-amd64.img"
-      remote_url="https://cloud-images.ubuntu.com/releases/jammy/release/ubuntu-22.04-server-cloudimg-amd64.img"
-      remote_shasum_url="https://cloud-images.ubuntu.com/releases/jammy/release/SHA256SUMS"
-      shasum_algorithm="256"
-      ;;
     noble | 24)
       file_name="ubuntu-24.04-server-cloudimg-amd64.img"
       remote_url="https://cloud-images.ubuntu.com/releases/noble/release/ubuntu-24.04-server-cloudimg-amd64.img"
       remote_shasum_url="https://cloud-images.ubuntu.com/releases/noble/release/SHA256SUMS"
+      shasum_algorithm="256"
+      ;;
+    resolute | 26)
+      file_name="ubuntu-26.04-server-cloudimg-amd64.img"
+      remote_url="https://cloud-images.ubuntu.com/releases/resolute/release/ubuntu-26.04-server-cloudimg-amd64.img"
+      remote_shasum_url="https://cloud-images.ubuntu.com/releases/resolute/release/SHA256SUMS"
       shasum_algorithm="256"
       ;;
     *)
