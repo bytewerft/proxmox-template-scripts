@@ -16,7 +16,7 @@ Blog post: [Golden Images and Proxmox Templates with cloud-init]
   - For systems using ZFS storage, a script with `local-zfs` defaults is available: [`build-template` (ZFS)](/scripts-zfs/build-template).
 - [`image-update`](/scripts/image-update): Check for an updated image and
   download the latest or missing image.
-  - Works with `alma`, `rocky`, `debian`, `fedora` and `ubuntu` cloud images.
+  - Works with `alma`, `rocky`, `debian` and `ubuntu` cloud images.
   - **Requires** `curl`
   - **Note**: This script will change the file extension to `*.img` for visibility in the Proxmox GUI, `qm disk import`
     will automatically convert disk image.
@@ -87,11 +87,11 @@ image-update -d rocky -r 9
 ```
 
 ```bash
-image-update -d debian -r 13
+image-update -d alma -r 10
 ```
 
 ```bash
-image-update -d fedora -r 42
+image-update -d debian -r 13
 ```
 
 ```bash
@@ -155,7 +155,6 @@ crontab -e
 > Please consider the typical release frequency when creating timers, as there is little advantage to creating daily or weekly timers.
 >
 > - Debian: bi-weekly to monthly.
-> - Fedora: single release, no reason to create a timer for any version.
 > - Ubuntu: bi-weekly, typically during the 2nd and 4th week of a month.
 
 The `image-update` script can also parse a single argument for distribution and release, `image-update ubuntu-24`, which
@@ -293,9 +292,6 @@ Linux Cloud Images:
 - [Debian Cloud Images]
   - Default User: `debian`
   - Uses `debian-1x-generic-amd64.qcow2`
-- [Fedora Cloud Images]
-  - Default User: `fedora`
-  - Uses `Fedora-Cloud-Base-Generic.x86_64-XX-XX.qcow2`
 - [Ubuntu Cloud Images]
   - Default User: `ubuntu`
   - Uses `ubuntu-2x.04-server-cloudimg-amd64.img`
@@ -308,7 +304,6 @@ Proxmox:
 [Alma Cloud Images]: https://almalinux.org/get-almalinux/#Cloud_Images
 [Rocky Cloud Images]: https://rockylinux.org/de-DE/download
 [Debian Cloud Images]: https://cloud.debian.org/images/cloud/
-[Fedora Cloud Images]: https://fedoraproject.org/cloud/download
 [Ubuntu Cloud Images]: https://cloud-images.ubuntu.com/releases/
 [OpenStack: Cloud Images]: https://docs.openstack.org/image-guide/obtain-images.html
 [Golden Images and Proxmox Templates with cloud-init]: https://www.trfore.com/posts/golden-images-and-proxmox-templates-using-cloud-init/
